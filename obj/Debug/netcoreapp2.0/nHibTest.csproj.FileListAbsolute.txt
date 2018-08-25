@@ -1,0 +1,11 @@
+/home/wilhelm/Documents/nHibTest/bin/Debug/netcoreapp2.0/nHibTest.deps.json
+/home/wilhelm/Documents/nHibTest/bin/Debug/netcoreapp2.0/nHibTest.runtimeconfig.json
+/home/wilhelm/Documents/nHibTest/bin/Debug/netcoreapp2.0/nHibTest.runtimeconfig.dev.json
+/home/wilhelm/Documents/nHibTest/bin/Debug/netcoreapp2.0/nHibTest.dll
+/home/wilhelm/Documents/nHibTest/bin/Debug/netcoreapp2.0/nHibTest.pdb
+/home/wilhelm/Documents/nHibTest/obj/Debug/netcoreapp2.0/nHibTest.csprojResolveAssemblyReference.cache
+/home/wilhelm/Documents/nHibTest/obj/Debug/netcoreapp2.0/nHibTest.csproj.CoreCompileInputs.cache
+/home/wilhelm/Documents/nHibTest/obj/Debug/netcoreapp2.0/nHibTest.AssemblyInfoInputs.cache
+/home/wilhelm/Documents/nHibTest/obj/Debug/netcoreapp2.0/nHibTest.AssemblyInfo.cs
+/home/wilhelm/Documents/nHibTest/obj/Debug/netcoreapp2.0/nHibTest.dll
+/home/wilhelm/Documents/nHibTest/obj/Debug/netcoreapp2.0/nHibTest.pdb
