@@ -10,5 +10,7 @@
   <ItemGroup>
     <EmbeddedResource Include="/home/wilhelm/Documents/nHibTest/Config/hibernate.cfg.xml" />
     <EmbeddedResource Include="/home/wilhelm/Documents/nHibTest/Mappings/Product.hbm.xml" />
+    <EmbeddedResource Include="/home/wilhelm/Documents/nHibTest/Mappings/Person.hbm.xml" />
+    <EmbeddedResource Include="/home/wilhelm/Documents/nHibTest/Mappings/Sale.hbm.xml" />
   </ItemGroup>
 </Project>

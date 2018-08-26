@@ -3,11 +3,10 @@
                    assembly="NHibTest" 
                    namespace="NHibTest.Domain">
   
-  <class name="Product">
+  <class name="Person">
     <id name="Id" />
-    <property name="Name" not-null="true"/>
-    <property name="Category" not-null="true"/>
-    <property name="Discontinued" not-null="true"/>
+    <property name="FirstName" not-null="true"/>
+    <property name="LastName" not-null="true"/>
   </class>
   
 </hibernate-mapping>
