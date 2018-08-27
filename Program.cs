@@ -20,8 +20,9 @@ namespace NHibTest {
             var sf = cfg.BuildSessionFactory ();
             //InitProducts (sf);
             //InitPersons (sf);
-            InitSales (sf);
-            ListSales (sf);
+            // InitSales (sf);
+            // ListSales (sf);
+            ListWilhelm (sf);
         }
 
         private static void ListSales (ISessionFactory sf) {
@@ -41,7 +42,16 @@ namespace NHibTest {
                 }
             }
         }
+        private static void ListWilhelm (ISessionFactory sf) {
+            using (var session = sf.OpenSession ()) {
+                var wilhelm = session.Query<Person> ()
+                    .Single (p => p.FirstName == "Wilhelm" && p.LastName == "Thieme");
 
+                foreach (var p in wilhelm.Purchases) {
+                    Console.WriteLine ($"{wilhelm.FirstName} kocht op {p.SaleDate} een {p.Product.Name} voor {p.Price} euro");
+                }
+            }
+        }
         private static void InitSales (ISessionFactory sf) {
             using (var session = sf.OpenSession ()) {
                 var sales = new List<Sale> ();
