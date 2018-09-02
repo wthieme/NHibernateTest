@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using MySql.Data;
 using NHibernate;
 using NHibernate.Cfg;
@@ -16,13 +18,44 @@ using NHibTest.Domain;
 namespace NHibTest {
     class Program {
         static void Main (string[] args) {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo ("nl-NL");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo ("nl-NL");
             var cfg = ConfigureNHibernate ();
             var sf = cfg.BuildSessionFactory ();
-            //InitProducts (sf);
-            //InitPersons (sf);
-            // InitSales (sf);
-            // ListSales (sf);
+            DeleteAll (sf);
+            InitProducts (sf);
+            InitPersons (sf);
+            InitSales (sf);
+            ListSales (sf);
             ListWilhelm (sf);
+            ListTotals (sf);
+        }
+        private static void ListTotals (ISessionFactory sf) {
+            using (var session = sf.OpenSession ()) {
+                var totals =
+                    session.Query<Sale> ()
+                    .GroupBy (s => s.Product)
+                    .Select (g => new {
+                        product = g.Key.Name,
+                            aantal = g.Count (),
+                            prijs = g.Sum (s => s.Price)
+                    })
+                    .OrderBy (s => s.aantal);
+                foreach (var t in totals) {
+                    Console.WriteLine ($"{t.product} is {t.aantal} keer verkocht voor totaal {t.prijs:C}");
+                }
+            }
+        }
+
+        private static void DeleteAll (ISessionFactory sf) {
+            using (var session = sf.OpenSession ()) {
+                using (ITransaction transaction = session.BeginTransaction ()) {
+                    session.CreateQuery ("delete from Sale").ExecuteUpdate ();
+                    session.Delete ("from Product");
+                    session.Query<Person> ().Delete ();
+                    transaction.Commit ();
+                }
+            }
         }
 
         private static void ListSales (ISessionFactory sf) {
@@ -38,7 +71,7 @@ namespace NHibTest {
                     .ToList ();
 
                 foreach (var s in sales) {
-                    Console.WriteLine ($"{s.Wie} kocht op {s.Datum} een {s.Wat} voor {s.Prijs} euro");
+                    Console.WriteLine ($"{s.Wie} kocht op {s.Datum:d} een {s.Wat} voor {s.Prijs:C}");
                 }
             }
         }
@@ -48,13 +81,15 @@ namespace NHibTest {
                     .Single (p => p.FirstName == "Wilhelm" && p.LastName == "Thieme");
 
                 foreach (var p in wilhelm.Purchases) {
-                    Console.WriteLine ($"{wilhelm.FirstName} kocht op {p.SaleDate} een {p.Product.Name} voor {p.Price} euro");
+                    Console.WriteLine ($"{wilhelm.FirstName} kocht op {p.SaleDate:d} een {p.Product.Name} voor {p.Price:c}");
                 }
             }
         }
         private static void InitSales (ISessionFactory sf) {
             using (var session = sf.OpenSession ()) {
                 var sales = new List<Sale> ();
+                var julia = session.Query<Person> ()
+                    .Single (p => p.FirstName == "Julia" && p.LastName == "Thieme");
                 var wilhelm = session.Query<Person> ()
                     .Single (p => p.FirstName == "Wilhelm" && p.LastName == "Thieme");
                 var greetje = session.Query<Person> ()
@@ -69,20 +104,38 @@ namespace NHibTest {
                 sales.Add (new Sale {
                     Person = wilhelm,
                         Product = car,
-                        SaleDate = DateTime.Now,
+                        SaleDate = DateTime.Now.Date,
                         Price = 2150.56M
                 });
                 sales.Add (new Sale {
                     Person = wilhelm,
                         Product = bike,
-                        SaleDate = DateTime.Now.AddDays (-50),
+                        SaleDate = DateTime.Now.Date.AddDays (-50),
                         Price = 150.95M
                 });
                 sales.Add (new Sale {
                     Person = greetje,
                         Product = bike,
-                        SaleDate = DateTime.Now.AddDays (-75),
+                        SaleDate = DateTime.Now.Date.AddDays (-75),
                         Price = 195.95M
+                });
+                sales.Add (new Sale {
+                    Person = willem,
+                        Product = bike,
+                        SaleDate = DateTime.Now.Date.AddDays (-55),
+                        Price = 155.15M
+                });
+                sales.Add (new Sale {
+                    Person = willem,
+                        Product = car,
+                        SaleDate = DateTime.Now.Date.AddDays (-55),
+                        Price = 19995.00M
+                });
+                sales.Add (new Sale {
+                    Person = julia,
+                        Product = car,
+                        SaleDate = DateTime.Now.Date.AddDays (-45),
+                        Price = 995.00M
                 });
 
                 using (var trans = session.BeginTransaction ()) {
