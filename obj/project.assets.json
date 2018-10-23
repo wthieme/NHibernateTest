@@ -228,7 +228,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "MySql.Data/8.0.12": {
+      "MySql.Data/8.0.13": {
         "type": "package",
         "dependencies": {
           "Google.Protobuf": "3.5.1",
@@ -1185,11 +1185,12 @@
         "runtime.json"
       ]
     },
-    "MySql.Data/8.0.12": {
-      "sha512": "I2jGfuyeomrGJ+N9O+vuV2ucyeayf/tMFREKPdjUcs1/wUF0t+WgUnnzJmJl4sNePNR1fEvAGaGbVAo4uLSF2A==",
+    "MySql.Data/8.0.13": {
+      "sha512": "mXfjg2pOdzpyd4wkXZPKYcNluzV68ggAO/LPcT7iuzU5kDS7livUDR8IsKkarEhBmRxBy0XmBnUOkEWJvfOW9Q==",
       "type": "package",
-      "path": "mysql.data/8.0.12",
+      "path": "mysql.data/8.0.13",
       "files": [
+        ".signature.p7s",
         "lib/net452/MySql.Data.dll",
         "lib/net452/MySql.Data.xml",
         "lib/netcoreapp2.0/MySql.Data.dll",
@@ -1198,7 +1199,7 @@
         "lib/netstandard1.6/MySql.Data.xml",
         "lib/netstandard2.0/MySql.Data.dll",
         "lib/netstandard2.0/MySql.Data.xml",
-        "mysql.data.8.0.12.nupkg.sha512",
+        "mysql.data.8.0.13.nupkg.sha512",
         "mysql.data.nuspec"
       ]
     },
@@ -3150,7 +3151,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.NETCore.App >= 2.0.0",
-      "MySql.Data >= 8.0.12",
+      "MySql.Data >= 8.0.13",
       "NHibernate >= 5.1.3"
     ]
   },
@@ -3200,7 +3201,7 @@
           },
           "MySql.Data": {
             "target": "Package",
-            "version": "[8.0.12, )"
+            "version": "[8.0.13, )"
           },
           "NHibernate": {
             "target": "Package",

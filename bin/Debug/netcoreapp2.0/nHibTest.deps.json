@@ -1,14 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "122123481964e7c5deb23d5821947b31430a8de7"
+    "signature": "5a183f9df85089d4ca3430d2a51a0779261e1b57"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "nHibTest/1.0.0": {
         "dependencies": {
-          "MySql.Data": "8.0.12",
+          "MySql.Data": "8.0.13",
           "NHibernate": "5.1.3"
         },
         "runtime": {
@@ -17,12 +17,18 @@
       },
       "Antlr3.Runtime/3.5.1": {
         "runtime": {
-          "lib/netstandard1.1/Antlr3.Runtime.dll": {}
+          "lib/netstandard1.1/Antlr3.Runtime.dll": {
+            "assemblyVersion": "3.5.0.2",
+            "fileVersion": "3.5.1.0"
+          }
         }
       },
       "Google.Protobuf/3.5.1": {
         "runtime": {
-          "lib/netstandard1.0/Google.Protobuf.dll": {}
+          "lib/netstandard1.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.5.1.0",
+            "fileVersion": "3.5.1.0"
+          }
         }
       },
       "Iesi.Collections/4.0.4": {
@@ -30,11 +36,14 @@
           "System.Runtime.Serialization.Formatters": "4.3.0"
         },
         "runtime": {
-          "lib/netstandard1.3/Iesi.Collections.dll": {}
+          "lib/netstandard1.3/Iesi.Collections.dll": {
+            "assemblyVersion": "4.0.0.4000",
+            "fileVersion": "4.0.4.0"
+          }
         }
       },
       "Microsoft.NETCore.Targets/1.1.0": {},
-      "MySql.Data/8.0.12": {
+      "MySql.Data/8.0.13": {
         "dependencies": {
           "Google.Protobuf": "3.5.1",
           "System.Configuration.ConfigurationManager": "4.4.1",
@@ -42,7 +51,10 @@
           "System.Text.Encoding.CodePages": "4.4.0"
         },
         "runtime": {
-          "lib/netcoreapp2.0/MySql.Data.dll": {}
+          "lib/netcoreapp2.0/MySql.Data.dll": {
+            "assemblyVersion": "8.0.13.0",
+            "fileVersion": "8.0.13.0"
+          }
         }
       },
       "NHibernate/5.1.3": {
@@ -56,7 +68,10 @@
           "System.ServiceModel.Primitives": "4.4.0"
         },
         "runtime": {
-          "lib/netcoreapp2.0/NHibernate.dll": {}
+          "lib/netcoreapp2.0/NHibernate.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.3.0"
+          }
         }
       },
       "Remotion.Linq/2.1.2": {
@@ -74,7 +89,10 @@
           "System.Threading": "4.0.11"
         },
         "runtime": {
-          "lib/netstandard1.0/Remotion.Linq.dll": {}
+          "lib/netstandard1.0/Remotion.Linq.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.2.30000"
+          }
         }
       },
       "Remotion.Linq.EagerFetching/2.1.0": {
@@ -88,7 +106,10 @@
           "System.Runtime": "4.3.0"
         },
         "runtime": {
-          "lib/netstandard1.0/Remotion.Linq.EagerFetching.dll": {}
+          "lib/netstandard1.0/Remotion.Linq.EagerFetching.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.30000"
+          }
         }
       },
       "System.Collections/4.3.0": {
@@ -102,7 +123,10 @@
           "System.Security.Cryptography.ProtectedData": "4.4.0"
         },
         "runtime": {
-          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.25921.2"
+          }
         }
       },
       "System.Diagnostics.Debug/4.0.11": {
@@ -169,12 +193,17 @@
       },
       "System.Net.Http.WinHttpHandler/4.4.0": {
         "runtime": {
-          "lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll": {}
+          "lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.25519.3"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netstandard2.0/System.Net.Http.WinHttpHandler.dll": {
             "rid": "win",
-            "assetType": "runtime"
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.25519.3"
           }
         }
       },
@@ -196,11 +225,15 @@
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll": {
             "rid": "unix",
-            "assetType": "runtime"
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.6.25525.6"
           },
           "runtimes/win7/lib/netstandard2.0/System.Private.ServiceModel.dll": {
             "rid": "win7",
-            "assetType": "runtime"
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.6.25525.6"
           }
         }
       },
@@ -307,12 +340,17 @@
       },
       "System.Security.Cryptography.ProtectedData/4.4.0": {
         "runtime": {
-          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.25519.3"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
             "rid": "win",
-            "assetType": "runtime"
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.6.25519.3"
           }
         }
       },
@@ -321,7 +359,10 @@
           "System.Security.AccessControl": "4.4.0"
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Permissions.dll": {}
+          "lib/netstandard2.0/System.Security.Permissions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.25921.2"
+          }
         }
       },
       "System.Security.Principal.Windows/4.4.0": {
@@ -341,7 +382,10 @@
           "System.Private.ServiceModel": "4.4.0"
         },
         "runtime": {
-          "lib/netstandard2.0/System.ServiceModel.Primitives.dll": {}
+          "lib/netstandard2.0/System.ServiceModel.Primitives.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.6.25525.6"
+          }
         }
       },
       "System.Text.Encoding/4.3.0": {
@@ -352,12 +396,17 @@
       },
       "System.Text.Encoding.CodePages/4.4.0": {
         "runtime": {
-          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.6.25519.3"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll": {
             "rid": "win",
-            "assetType": "runtime"
+            "assetType": "runtime",
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.6.25519.3"
           }
         }
       },
@@ -409,12 +458,12 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
-    "MySql.Data/8.0.12": {
+    "MySql.Data/8.0.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-I2jGfuyeomrGJ+N9O+vuV2ucyeayf/tMFREKPdjUcs1/wUF0t+WgUnnzJmJl4sNePNR1fEvAGaGbVAo4uLSF2A==",
-      "path": "mysql.data/8.0.12",
-      "hashPath": "mysql.data.8.0.12.nupkg.sha512"
+      "sha512": "sha512-mXfjg2pOdzpyd4wkXZPKYcNluzV68ggAO/LPcT7iuzU5kDS7livUDR8IsKkarEhBmRxBy0XmBnUOkEWJvfOW9Q==",
+      "path": "mysql.data/8.0.13",
+      "hashPath": "mysql.data.8.0.13.nupkg.sha512"
     },
     "NHibernate/5.1.3": {
       "type": "package",
